@@ -8,6 +8,7 @@ public class ManagerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ManagerApplication.class, args);
+		//new test line added to new feature branch
 
 	}
 
