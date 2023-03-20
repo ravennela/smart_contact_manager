@@ -8,7 +8,9 @@ public class ManagerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ManagerApplication.class, args);
-		//test lines added in main branch
+
+		// test lines added in main branch
+
 	}
 
 }
