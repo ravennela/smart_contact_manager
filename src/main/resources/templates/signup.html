@@ -7,12 +7,67 @@
 
 <body>
     <Section>
-        <h1>
-            THis is my SignUp Page
-        </h1>
-        <h2>
-            Iam Bouilding Fragments in About Page
-        </h2>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="my-card mt-3">
+                        <!-- <div th:if="${session.message}" th:classappend="${session.message.type}" class="alert "
+                            role="alert">
+                            <p class="text-center" th:text="${session.message.content}"></p>
+                            <th:block th:text="${#session.removeAttribute('message')}"></th:block>
+                        </div> -->
+                        <div class="text-center">
+                            <img width="10%" src="" th:src="@{img/membership.png}">
+                        </div>
+                        <h1 class="text-center"> Register Here !!</h1>
+
+                        <form action="" th:action="@{/do_register}" method="post" th:object="${user}">
+                            <div class="form-group">
+                                <label>Name </label>
+
+                                <input type="text" class="form-control" name="name" id="exampleInputName"
+                                    placeholder="Enter Name" required>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email address</label>
+                                <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                                    placeholder="Enter email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" name="password" class="form-control" id="exampleInputPassword1"
+                                    placeholder="Password" required>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <textarea name="about" class="form-control" rows="5"
+                                    placeholder="Enter Something about Your self ">
+                                </textarea>
+                            </div>
+                            <br>
+                            <!-- Terms and Conditions-->
+                            <div class="form-group form-check">
+                                <input type="checkbox" name="aggrement" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Accept the terms and
+                                    conditions</label>
+                            </div>
+                            <br>
+
+                            <div class="text-center">
+                                <button type="submit" class="btn bg-primary text-white ">Submit</button>
+                                <button type="reset" class="btn bg-primary text-white ">Reset</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
     </Section>
 </body>
 

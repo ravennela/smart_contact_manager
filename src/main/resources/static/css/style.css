@@ -13,3 +13,17 @@ body {
     color: white;
     background-size: cover;
 }
+
+.my-card {
+    padding: 3%;
+    background-color: white;
+}
+
+label,
+input {
+    display: block;
+}
+
+label {
+    margin-top: 20px;
+}

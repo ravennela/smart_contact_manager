@@ -3,6 +3,9 @@ package com.smart.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.annotations.Comment;
+import org.springframework.stereotype.Component;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,9 +15,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "USER")
+@Component
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,9 +29,12 @@ public class User {
     public User() {
     }
 
+    @NotBlank(message = "name should not be empty")
     private String name;
     @Column(unique = true)
+    @Email(regexp = "^([\\w-\\.]+){1,64}@([\\w&&[^_]]+){2,255}.[a-z]{2,}$")
     private String email;
+    @NotBlank(message = "Password Should not be empty")
     private String password;
 
     public List<Contact> getContacts() {
@@ -36,12 +45,12 @@ public class User {
         this.contacts = contacts;
     }
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "user")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
     private List<Contact> contacts = new ArrayList<>();
 
-    public User(int id, String name, String email, String password, String role, boolean enabled, String imageUrl,
+    public User( String name, String email, String password, String role, boolean enabled, String imageUrl,
             String about) {
-        this.id = id;
+        
         this.name = name;
         this.email = email;
         this.password = password;
