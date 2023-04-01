@@ -7,3 +7,5 @@ import com.smart.entities.User;
 public interface UserRepository extends JpaRepository<User, Integer> {
 
 }
+
+//changes made in remore user repository
