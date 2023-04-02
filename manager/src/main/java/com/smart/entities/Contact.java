@@ -120,3 +120,4 @@ public class Contact {
     }
 
 }
+// changes added in contact.java file in registration branch
