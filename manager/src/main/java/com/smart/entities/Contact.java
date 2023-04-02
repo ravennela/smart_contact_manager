@@ -120,3 +120,5 @@ public class Contact {
     }
 
 }
+
+//some changes made in contact.java
