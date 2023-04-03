@@ -34,3 +34,5 @@ public class HomeController {
     }
 
 }
+
+//some thing added in home contrller
